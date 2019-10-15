@@ -60,6 +60,13 @@ ready(function(){
   }
 
   var stars = document.querySelectorAll(".rating-stars a");
+  // Sets the initial rating based on the value of 'selectedRating' variable
+  for(ix=0; ix<5; ix++)
+  {
+    if(ix<selectedRating)
+        addClass(stars[ix], "selected");
+  }  
+  
   Array.prototype.forEach.call(stars, function(el, i){
     el.addEventListener("mouseover", function(evt){
       removeClass(stars, "selected");
